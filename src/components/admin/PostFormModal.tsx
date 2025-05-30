@@ -29,7 +29,7 @@ export default function PostFormModal({
   const mutation = useMutation({
     mutationFn: async () => {
       const res = await fetch(
-        `https://jsonplaceholder.typicode.com/posts${isEditing ? `/${post.id}` : ''}`,
+        `https://jsonplaceholder.typicode.com/posts${isEditing && post?.id ? `/${post.id}` : ''}`,
         {
           method: isEditing ? 'PUT' : 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -51,12 +51,8 @@ export default function PostFormModal({
   return (
     <Dialog open onOpenChange={onClose}>
       <DialogContent className="max-w-2xl">
-        {/* Accessibility title for screen readers */}
         <DialogTitle>{isEditing ? 'Edit Post' : 'Create Post'}</DialogTitle>
-
-        {/* Optional visible heading */}
         <h2 className="text-xl font-bold mb-4">{isEditing ? 'Edit' : 'Create'} Post</h2>
-
         <Input
           className="mb-4"
           placeholder="Post title"
