@@ -1,5 +1,5 @@
 'use client';
-import { fetchPost , Post } from '@/app/lib/lib';
+import {   Post } from '@/app/lib/lib';
 import { Button } from '@/components/ui/button';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 

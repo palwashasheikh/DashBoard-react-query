@@ -1,7 +1,7 @@
 'use client';
 
-import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { fetchPost,fetchPosts , Post } from '../lib/lib';
+import { useQuery } from '@tanstack/react-query';
+import { fetchPosts , Post } from '../lib/lib';
 import Navbar from '../components/Navbar';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
